@@ -3,7 +3,7 @@ package com.MeFit.Dto;
 import java.math.BigDecimal;
 
 import com.MeFit.Models.Gender;
-import com.MeFit.Models.Goal;
+import com.MeFit.Models.Profile;
 import com.MeFit.Models.Users;
 
 public class ProfileDto {
@@ -23,7 +23,7 @@ public class ProfileDto {
 	
 	public ProfileDto(Profile profile) {
 		this.id = profile.getId();
-		this.user = user.getUser();
+		this.user = profile.getUser();
 		this.age = profile.getAge();
 		this.gender = profile.getGender();
 		this.height = profile.getHeight();

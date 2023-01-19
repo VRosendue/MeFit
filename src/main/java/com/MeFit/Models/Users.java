@@ -15,13 +15,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+
 @NoArgsConstructor
 @Table(name="Users") //User is reserved in H2-Console, which means the name of the table has to be different
 public class Users {
@@ -51,7 +48,7 @@ public class Users {
 	inverseJoinColumns = @JoinColumn(name = "goal_id"))
 	private Set<Goal> goals = new HashSet<>();
 	
-	
+	 
 	//Using library for password hashing - check mvn dependencies for JBCrypt
 	public void setPassword(String password) {
 		this.salt = BCrypt.gensalt();
@@ -61,4 +58,51 @@ public class Users {
 	public boolean checkPassword(String password) {
 		return BCrypt.checkpw(password, this.password);
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
+	public Set<Goal> getGoals() {
+		return goals;
+	}
+
+	public void setGoals(Set<Goal> goals) {
+		this.goals = goals;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	
+	
+	
 }

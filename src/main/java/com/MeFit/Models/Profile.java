@@ -16,13 +16,10 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+
 @NoArgsConstructor
 @Table(name = "Profile")
 
@@ -66,6 +63,87 @@ public class Profile {
 	
 	@Column
 	private String aboutMe;
+	
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Users getUser() {
+		return user;
+	}
+
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
+
+	public Integer getAge() {
+		return age;
+	}
+
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+
+	public Gender getGender() {
+		return gender;
+	}
+
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+
+	public BigDecimal getHeight() {
+		return height;
+	}
+
+
+	public void setHeight(BigDecimal height) {
+		this.height = height;
+	}
+
+
+	public BigDecimal getWeight() {
+		return weight;
+	}
+
+
+	public void setWeight(BigDecimal weight) {
+		this.weight = weight;
+	}
+
+
+	public BigDecimal getBmi() {
+		return bmi;
+	}
+
+
+	public void setBmi(BigDecimal bmi) {
+		this.bmi = bmi;
+	}
+
+
+	public String getAboutMe() {
+		return aboutMe;
+	}
+
+
+	public void setAboutMe(String aboutMe) {
+		this.aboutMe = aboutMe;
+	}
 	
 	
 	

@@ -10,13 +10,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+
 @NoArgsConstructor
 @Table(name = "Exercises")
 public class Exercise {
@@ -32,5 +29,31 @@ public class Exercise {
 	@ManyToMany(mappedBy = "exercises")
 	private Set<Workout> workouts = new HashSet<>();
 	
+	//Workout workouts, String name, Long id;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<Workout> getWorkouts() {
+		return workouts;
+	}
+
+	public void setWorkouts(Set<Workout> workouts) {
+		this.workouts = workouts;
+	}
+	
+    
 }

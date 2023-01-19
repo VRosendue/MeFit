@@ -14,13 +14,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+
 @NoArgsConstructor
 @Table(name = "Goal")
 public class Goal {
@@ -30,6 +27,9 @@ public class Goal {
 	private Long id;
 	
 	
+	
+
+
 	@Column
 	private String name;
 	
@@ -41,6 +41,45 @@ public class Goal {
 	private List<Workout> workouts = new ArrayList<>();
 	
 	
+	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Set<Users> getUsers() {
+		return users;
+	}
+
+
+	public void setUsers(Set<Users> users) {
+		this.users = users;
+	}
+
+
+	public List<Workout> getWorkouts() {
+		return workouts;
+	}
+
+
+	public void setWorkouts(List<Workout> workouts) {
+		this.workouts = workouts;
+	}
 	
 
 }
