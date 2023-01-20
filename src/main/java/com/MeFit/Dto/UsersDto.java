@@ -9,6 +9,7 @@ public class UsersDto {
 	private Long id;
 	private String username;
 	private String email;
+	private String password;
 	
 	public UsersDto() {}
 	
@@ -16,6 +17,7 @@ public class UsersDto {
 		this.id = users.getId();
 		this.username = users.getUsername();
 		this.email = users.getEmail();
+		this.setPassword(users.getPassword());
 	
 	}
 
@@ -41,6 +43,14 @@ public class UsersDto {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

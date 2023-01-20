@@ -39,6 +39,9 @@ public class Users {
 	private String salt;
 	
 	
+	//Would be a good idea to add an enum with Roles, and add private String role in this section
+	
+	
 	
 	
 	@ManyToMany(cascade = { CascadeType.PERSIST,
