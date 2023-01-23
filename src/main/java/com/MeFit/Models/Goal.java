@@ -1,5 +1,6 @@
 package com.MeFit.Models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -33,12 +34,25 @@ public class Goal {
 	@Column
 	private String name;
 	
+	@Column
+	private String description;
+	
+	@Column
+	private LocalDate startDate;
+	
+	@Column
+	private LocalDate endDate;
+	
+	
+	
 	@ManyToMany(mappedBy = "goals")
 	private Set<Users> users = new HashSet<>();
 	
 	
 	@OneToMany(mappedBy = "goals", cascade = CascadeType.ALL)
 	private List<Workout> workouts = new ArrayList<>();
+	
+	
 	
 	
 	
@@ -80,6 +94,38 @@ public class Goal {
 	public void setWorkouts(List<Workout> workouts) {
 		this.workouts = workouts;
 	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+	
+	
 	
 
 }
